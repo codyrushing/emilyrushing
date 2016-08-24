@@ -1,0 +1,47 @@
+header {
+  padding: 1.25em;
+  display: flex;
+  // width: 100%;
+  background: rgba(255,255,255,0.75);
+  position: fixed;
+
+  a {
+    transition: color 0.2s ease-in-out;
+  }
+
+  a:hover {
+    color: $main-color;
+  }
+
+  nav {
+    font-size: 1.1em;
+    padding: 0 0 0 1em;
+    @include PlayfairDisplay();
+    a {
+      color: $text-color;
+      line-height: 2em;
+      display: inline-block;
+      padding: 0 0.5em;
+    }
+  }
+}
+
+.logo {
+  font-size: 0;
+  a {
+    color: $text-color;
+  }
+  span {
+    position: relative;
+    @include Raleway();
+    font-size: 1.4rem;
+    letter-spacing: -0.06em;
+    display: inline-block;
+    &:first-child {
+      font-weight: 700;
+    }
+    &:last-child {
+      top: 0.2em;
+    }
+  }
+}

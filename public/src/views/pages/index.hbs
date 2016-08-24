@@ -1,0 +1,15 @@
+---
+pageTitle: Home page
+jumbotron:
+  image: /images/home-01.jpg
+---
+{{> jumbotron jumbotron }}
+<h1>{{pageTitle}}</h1>
+{{!-- inline markdown --}}
+{{#markdown}}
+You can use markdown with this helper, which is __great__.
+You can even use handlebars expressions; the title of this page is "{{pageTitle}}"
+{{/markdown}}
+
+{{!-- external markdown --}}
+{{#md "snippet.md"}}{{/md}}
