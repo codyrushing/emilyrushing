@@ -1,15 +1,57 @@
 ---
-pageTitle: Home page
-jumbotron:
-  image: /images/home-01.jpg
+pageTitle: Independent dance artist
+heroImage: /images/home-01.jpg
+gallery:
+- full: /images/gallery/01_5184x3456.jpg
+  thumb: /images/gallery/01_thumb.jpg
+  description:
+  caption: Image caption
+- full: /images/gallery/02_2250x1500.jpg
+  thumb: /images/gallery/02_thumb.jpg
+  description:
+  caption: Image caption
+- full: /images/gallery/03_4992x3328.jpg
+  thumb: /images/gallery/03_thumb.jpg
+  description:
+  caption: Image caption
+- full: /images/gallery/04_3900x3328.jpg
+  thumb: /images/gallery/04_thumb.jpg
+  description:
+  caption: Image caption
+galleryCollapsed:
+- full: /images/gallery/05_5184x3456.jpg
+  thumb: /images/gallery/05_thumb.jpg
+  caption: Whatever
+- full: /images/gallery/06_5184x3456.jpg
+  thumb: /images/gallery/06_thumb.jpg
+  caption: Whatever
+- full: /images/gallery/07_2250x1500.jpg
+  thumb: /images/gallery/07_thumb.jpg
+  caption: Whatever
+- full: /images/gallery/08_2250x1500.jpg
+  thumb: /images/gallery/08_thumb.jpg
+  caption: Whatever
+- full: /images/gallery/11_3456x5184.jpg
+  thumb: /images/gallery/11_thumb.jpg
+  caption: Whatever
 ---
-{{> jumbotron jumbotron }}
-<h1>{{pageTitle}}</h1>
-{{!-- inline markdown --}}
-{{#markdown}}
-You can use markdown with this helper, which is __great__.
-You can even use handlebars expressions; the title of this page is "{{pageTitle}}"
-{{/markdown}}
+{{> hero this }}
 
-{{!-- external markdown --}}
-{{#md "snippet.md"}}{{/md}}
+<div class="photo-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  {{> gallery-list gallery}}
+
+  <a href="#" class="toggle-more">
+    <div class="text">
+      Show
+      <span class="more">more</span>
+      <span class="less">less</span>
+    </div>
+  </a>
+
+  {{> gallery-list galleryCollapsed}}
+</div>
+
+<h2>Videos</h2>
+{{> video-embed '<iframe src="https://player.vimeo.com/video/151764913" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }}
+{{> video-embed '<iframe src="https://player.vimeo.com/video/164649306" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }}
+{{> video-embed '<iframe src="https://player.vimeo.com/video/135636404" width="640" height="362" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }}

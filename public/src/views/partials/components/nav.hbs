@@ -1,0 +1,5 @@
+<nav>
+  {{#each navPages}}
+    <a href="/{{name}}.html"{{#ifCond ../page "===" name}} class="active"{{/ifCond}}>{{title}}</a>
+  {{/each}}
+</nav>

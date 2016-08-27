@@ -32,6 +32,17 @@ module.exports = function(Handlebars){
   		}
   		return r.join("");
   	},
-    log: console.log
+    log: console.log,
+    year: function(){
+      return new Date().getUTCFullYear();
+    },
+    spanWords: function(context){
+      var r = [];
+      var words = context.split(" ");
+      words.forEach(function(word){
+        r.push(`<span>${word}</span>`)
+      });
+      return r.join(" ");
+    }
   }
 };

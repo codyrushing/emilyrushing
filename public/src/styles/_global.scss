@@ -15,10 +15,17 @@ $main-color: #0D5B99;
   font-weight: 400;
 }
 
-body {
+html {
+  height: 100%;
   @include Raleway();
   font-size: 14px;
+}
+
+body {
+  line-height: 1.2;
   color: $text-color;
+  min-height: 100%;
+  position: relative;
 }
 
 * {
@@ -43,17 +50,23 @@ h6 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 2.75em;
+  line-height: 1;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.75em;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 a {
   text-decoration: none;
+  color: $main-color;
+}
+
+figure {
+  margin: 0;
 }

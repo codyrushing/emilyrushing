@@ -33,7 +33,22 @@ app.asyncHelper("md", function(name, options, cb){
 });
 
 // make site constants available on rendering context
-app.data(constants)
+app.data(Object.assign({}, constants, {
+  navPages: [
+    {
+      name: "about",
+      title: "About"
+    },
+    {
+      name: "work",
+      title: "Work"
+    },
+    {
+      name: "contact",
+      title: "Contact"
+    }
+  ]
+}));
 
 app.task("load", function(done) {
   app.partials(path.join(paths.src.templates, "partials", "**/*.hbs"));

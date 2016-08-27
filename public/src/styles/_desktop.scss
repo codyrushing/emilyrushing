@@ -1,3 +1,25 @@
-@media all and (min-width: $desktop) {
+$galleryColumns: 4;
+$headerHeight: 4rem;
+$footerHeight: 3rem;
 
+@media all and (min-width: $desktop) {
+  html {
+    font-size: 18px;
+  }
+  body {
+    padding-top: $headerHeight;
+    padding-bottom: $footerHeight;
+  }
+
+  header {
+    height: $headerHeight;
+  }
+
+  footer {
+    height: $footerHeight;
+  }
+
+  @include hero-height(3);
+
+  @include photo-gallery-layout(4);
 }

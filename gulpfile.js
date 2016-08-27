@@ -142,9 +142,17 @@ gulp.task("js", ["eslint"], () => {
     .pipe(gulpPlugins.if(!constants.IS_DEVELOPMENT, jsProdChannel()));
 });
 
-gulp.task("images", () => {
+gulp.task("generate-gallery", () => {
+  const galleryFolder = "gallery";
+  return gulp.src(path.join(paths.src.images, galleryFolder, "src", "*.{jpg,gif,png}"))
+    .pipe(require("./gallery-thumbs"))
+    .pipe(gulpPlugins.print())
+    .pipe(gulp.dest(path.join(paths.src.images, galleryFolder)));
+});
+
+gulp.task("images", /*["generate-gallery"],*/ () => {
   return gulp.src(path.join(paths.src.images, "**/*.{jpeg,jpg,gif,png,svg}"))
-    // .pipe(gulpPlugins.imagemin())
+    .pipe(gulpPlugins.imagemin())
     .pipe(gulp.dest(paths.dist.images));
 });
 
@@ -155,9 +163,9 @@ gulp.task("watch", (done) => {
   gulpPlugins.watch(path.join(paths.src.styles, "**/*.scss"), () => {
     runSequence("buildCSS");
   });
-  gulpPlugins.watch(path.join(paths.src.images, "**/*"), () => {
-    runSequence("images");
-  });
+  // gulpPlugins.watch(path.join(paths.src.images, "**/*"), () => {
+  //   runSequence("images");
+  // });
   gulpPlugins.watch([
       path.join(paths.src.templates, "**/*.hbs"),
       path.join(paths.src.content, "**/*.md"),

@@ -1,0 +1,8 @@
+{{#each this}}
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="{{full}}" itemprop="contentUrl">
+          <img src="{{thumb}}" itemprop="thumbnail" alt="{{description}}" />
+      </a>
+      <figcaption itemprop="caption description">{{caption}}</figcaption>
+  </figure>
+{{/each}}
