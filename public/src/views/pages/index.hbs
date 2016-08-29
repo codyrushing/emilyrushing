@@ -1,6 +1,8 @@
 ---
-pageTitle: Independent dance artist
-heroImage: /images/home-01.jpg
+pageTitle: "Emily Rushing : dance artist"
+pageName: home
+hero:
+  image: /images/home-01.jpg
 gallery:
 - full: /images/gallery/01_5184x3456.jpg
   thumb: /images/gallery/01_thumb.jpg
@@ -37,21 +39,6 @@ galleryCollapsed:
 ---
 {{> hero this }}
 
-<div class="photo-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-  {{> gallery-list gallery}}
-
-  <a href="#" class="toggle-more">
-    <div class="text">
-      Show
-      <span class="more">more</span>
-      <span class="less">less</span>
-    </div>
-  </a>
-
-  {{> gallery-list galleryCollapsed}}
-</div>
-
-<h2>Videos</h2>
 {{> video-embed '<iframe src="https://player.vimeo.com/video/151764913" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }}
-{{> video-embed '<iframe src="https://player.vimeo.com/video/164649306" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }}
-{{> video-embed '<iframe src="https://player.vimeo.com/video/135636404" width="640" height="362" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }}
+{{!-- {{> video-embed '<iframe src="https://player.vimeo.com/video/164649306" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }}
+{{> video-embed '<iframe src="https://player.vimeo.com/video/135636404" width="640" height="362" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' }} --}}

@@ -2,6 +2,8 @@ $tablet: 36em;
 $desktop: 56em;
 $giant: 105em;
 
+$topnav-width: 200px;
+
 $text-color: #222;
 $main-color: #0D5B99;
 
@@ -22,7 +24,8 @@ html {
 }
 
 body {
-  line-height: 1.2;
+  line-height: 1.5;
+  text-align: justify;
   color: $text-color;
   min-height: 100%;
   position: relative;
@@ -47,11 +50,13 @@ h4,
 h5,
 h6 {
   @include PlayfairDisplay();
+  line-height: 1;
+  margin: 4% 0 0;
+  padding: 0;
 }
 
 h1 {
   font-size: 2.75em;
-  line-height: 1;
 }
 
 h2 {

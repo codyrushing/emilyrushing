@@ -1,10 +1,10 @@
 @mixin photo-gallery-layout($columns) {
   .photo-gallery > * {
-    $width: (100%/$columns) - 2.5%;
+    $width: (100%/$columns) - $gutters;
     width: $width;
     padding-bottom: $width / 16 * 9;
     position: relative;
-    margin: 1.25%;
+    margin: $gutters/2;
   }
 };
 
@@ -12,11 +12,15 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  margin: 0 -1.25%;
-  padding: 1.25% 0;
+  margin: 0 $gutters/-2;
+  padding: $gutters/2 0;
   justify-content: center;
+
+  figure {
+    margin: $gutters/2;
+  }
+
   & > * {
-    margin: 2.5% 0;
     & > a {
       position: absolute;
       width: 100%;

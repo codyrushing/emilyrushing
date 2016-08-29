@@ -1,5 +1,6 @@
 import PhotoSwipe from "photoswipe";
 import gallery from "./components/gallery";
+import header from "./components/header";
 
 export default {
   init: function(){
@@ -7,6 +8,6 @@ export default {
   },
   DOMReady: () => {
     gallery(".photo-gallery");
+    header();
   }
-
-}
+};

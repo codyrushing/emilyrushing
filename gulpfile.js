@@ -4,8 +4,7 @@ var gulp = require("gulp"),
     lazypipe = require("lazypipe"),
     del = require("del"),
     gulpPlugins = require("gulp-load-plugins")(),
-    runSequence = require("run-sequence"),
-    assembler = require("./assemblefile");
+    runSequence = require("run-sequence");
 
 var paths = require("./paths");
 
@@ -21,6 +20,7 @@ var jsProdChannel = lazypipe()
   .pipe(gulp.dest, paths.dist.js);
 
 gulp.task("templates", function(done) {
+  var assembler = require("./assemblefile");
   return assembler.build((err) => {
     if (err) throw err;
     done();
@@ -144,13 +144,23 @@ gulp.task("js", ["eslint"], () => {
 
 gulp.task("generate-gallery", () => {
   const galleryFolder = "gallery";
+
+  const dist = path.join(paths.src.images, galleryFolder);
+
   return gulp.src(path.join(paths.src.images, galleryFolder, "src", "*.{jpg,gif,png}"))
+    .pipe(gulpPlugins.newer({
+      dest: dist,
+      map: function(relativePath){
+        var ext = relativePath.substring(relativePath.lastIndexOf("."));
+        return relativePath.replace(ext, `_thumb${ext}`);
+      }
+    }))
     .pipe(require("./gallery-thumbs"))
     .pipe(gulpPlugins.print())
-    .pipe(gulp.dest(path.join(paths.src.images, galleryFolder)));
+    .pipe(gulp.dest(dist));
 });
 
-gulp.task("images", /*["generate-gallery"],*/ () => {
+gulp.task("images", ["generate-gallery"], () => {
   return gulp.src(path.join(paths.src.images, "**/*.{jpeg,jpg,gif,png,svg}"))
     .pipe(gulpPlugins.imagemin())
     .pipe(gulp.dest(paths.dist.images));
@@ -163,9 +173,9 @@ gulp.task("watch", (done) => {
   gulpPlugins.watch(path.join(paths.src.styles, "**/*.scss"), () => {
     runSequence("buildCSS");
   });
-  // gulpPlugins.watch(path.join(paths.src.images, "**/*"), () => {
-  //   runSequence("images");
-  // });
+  gulpPlugins.watch(path.join(paths.src.images, "**/*"), () => {
+    runSequence("images");
+  });
   gulpPlugins.watch([
       path.join(paths.src.templates, "**/*.hbs"),
       path.join(paths.src.content, "**/*.md"),
@@ -178,25 +188,8 @@ gulp.task("watch", (done) => {
 });
 
 gulp.task("server", function(done){
-  const nodeStatic = require("node-static");
-  const port = 8080;
-  var fileServer = new nodeStatic.Server(paths.distBase);
-
-  require("http").createServer(function (request, response) {
-    request.addListener("end", function () {
-      fileServer.serve(request, response);
-    }).resume();
-  }).listen(port, (err) => {
-    if (err) throw err;
-    console.log(
-  `
-  * * * * * * * * * * * * * * * * * * * * * * * *
-  * Local server is up and running on port ${port} *
-  * * * * * * * * * * * * * * * * * * * * * * * *
-  `
-    );
-    done(err);
-  });
+  require("child_process").exec("node server.js");
+  done();
 });
 
 gulp.task("clean", () => {

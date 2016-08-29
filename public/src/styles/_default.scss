@@ -1,9 +1,18 @@
+$gutters: 4%;
 $galleryColumns: 4;
 $headerHeight: 3rem;
 $footerHeight: 3rem;
 
+@import "components/logo";
+@import "components/hero";
+@import "components/header";
+@import "components/photo-gallery";
+@import "components/video-embed";
+@include photo-gallery-layout(1);
+
 body {
   padding: $headerHeight 4% $footerHeight;
+  overflow-x: hidden;
 }
 
 main {
@@ -11,9 +20,11 @@ main {
 }
 
 footer {
-  height: 3rem;
+  font-size: 0.8em;
+  height: 2.5rem;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -22,43 +33,20 @@ footer {
   padding: 0 4%;
 }
 
-header {
-  padding: 0 4%;
-  height: $headerHeight;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  background: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-
-  a {
-    transition: color 0.2s ease-in-out;
-  }
-
-  a:hover,
-  a.active {
-    color: $main-color;
-  }
-
-  nav {
-    font-size: 1rem;
-    padding: 0 0 0 1rem;
-    @include PlayfairDisplay();
-    a {
-      color: $text-color;
-      line-height: 2rem;
-      display: inline-block;
-      padding: 0 0.5rem;
-    }
+figure {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  &.right {
+    float: right;
+    clear: right;
+    margin-left: 1em;
   }
 }
 
+.col-2 {
+  width: 50%;
+}
 
-@import "components/logo";
-@import "components/hero";
-@import "components/photo-gallery";
-@import "components/video-embed";
-@include photo-gallery-layout(2);
+.col-3 {
+  width: 33%;
+}

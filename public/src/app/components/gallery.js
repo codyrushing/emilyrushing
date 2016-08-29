@@ -206,14 +206,19 @@ export default function(gallerySelector) {
     var galleryElements = document.querySelectorAll( gallerySelector );
 
     for(var i = 0, l = galleryElements.length; i < l; i++) {
-      let galleryElement = galleryElements[i]
+      let galleryElement = galleryElements[i];
+      let toggleMoreLink = galleryElement.querySelectorAll(".toggle-more");
       galleryElement.setAttribute('data-pswp-uid', i+1);
       galleryElement.onclick = onThumbnailsClick;
 
-      galleryElement.querySelectorAll(".toggle-more")[0].addEventListener("click", (e) => {
-        e.preventDefault();
-        galleryElement.classList.toggle("expanded");
-      });
+      if(toggleMoreLink && toggleMoreLink.length){
+        toggleMoreLink = toggleMoreLink[0];
+        galleryElement.querySelectorAll(".toggle-more")[0].addEventListener("click", (e) => {
+          e.preventDefault();
+          galleryElement.classList.toggle("expanded");
+        });
+      }
+
     }
 
     // Parse URL and open gallery if it contains #&pid=3&gid=1

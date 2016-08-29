@@ -40,6 +40,10 @@ app.data(Object.assign({}, constants, {
       title: "About"
     },
     {
+      name: "media",
+      title: "Photos + Video"
+    },
+    {
       name: "work",
       title: "Work"
     },
