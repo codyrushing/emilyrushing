@@ -1,6 +1,6 @@
 @media all and (min-width: $tablet) {
   @include hero-height(2.5);
-  @include photo-gallery-layout(2);
+  @include photo-gallery-layout(3);
 
   body.nav-open {
     transform: translateY(0);

@@ -8,7 +8,7 @@ $footerHeight: 3rem;
 @import "components/header";
 @import "components/photo-gallery";
 @import "components/video-embed";
-@include photo-gallery-layout(1);
+@include photo-gallery-layout(2);
 
 body {
   padding: $headerHeight 4% $footerHeight;
@@ -43,10 +43,6 @@ figure {
   }
 }
 
-.col-2 {
+.aside {
   width: 50%;
-}
-
-.col-3 {
-  width: 33%;
 }

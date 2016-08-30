@@ -1,3 +1,8 @@
 <div class="hero" style="background-image:url({{hero.image}});{{#if hero.position}} background-position: {{hero.position}};{{/if}}">
-  <h1>{{#spanWords pageTitle}}{{/spanWords}}</h1>
+  <div class="headings">
+    <h1>{{#spanWords pageTitle}}{{/spanWords}}</h1>
+    {{#if pageSubtitle}}
+      <h2>{{#spanWords pageSubtitle}}{{/spanWords}}</h2>
+    {{/if}}
+  </div>
 </div>

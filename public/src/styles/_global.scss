@@ -25,7 +25,6 @@ html {
 
 body {
   line-height: 1.5;
-  text-align: justify;
   color: $text-color;
   min-height: 100%;
   position: relative;
@@ -74,4 +73,8 @@ a {
 
 figure {
   margin: 0;
+}
+
+main {
+  text-align: justify;
 }

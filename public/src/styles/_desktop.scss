@@ -19,7 +19,11 @@ $footerHeight: 3rem;
     height: $footerHeight;
   }
 
+  .aside {
+    width: 33%;
+  }
+
   @include hero-height(3);
 
-  @include photo-gallery-layout(3);
+  @include photo-gallery-layout(4);
 }
