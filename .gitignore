@@ -34,4 +34,7 @@ node_modules
 
 public/bower_components
 public/src/styles/vendor
-public/dist
+public/dist/css
+public/dist/js
+public/dist/*.html
+public/dist/images/gallery/src
