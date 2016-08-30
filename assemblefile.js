@@ -67,6 +67,7 @@ app.task("default", ["load"], function(){
     .pipe(gulpPlugins.rename({
       extname: ".html"
     }))
+    .pipe(gulpPlugins.if(!constants.IS_DEVELOPMENT, gulpPlugins.htmlmin({collapseWhitespace: true})))
     .pipe(app.dest(paths.distBase))
 })
 
