@@ -1,3 +1,15 @@
+* ___Sweet Lilium___ (2017)
+  * Danced in a work created by Amy Myers as part of Jennifer Sherburn's 7th installment of her 11:11 series at Sertodo Copper.
+* ___11.11.06___ (2017)
+  * Performed in Jennifer Sherburn's 6th installment of her 11:11 series.  The set was created by Yvonne Boudreaux.  Lighting by Natalie George and music by Solid State Dream Suit.
+* ___Las Cuatro Estaciones___ (2017)
+  * Performed ins [Sharon Marroquín's evening length work](http://www.austinchronicle.com/arts/2017-03-24/las-cuatro-estaciones-a-story-of-human-trees/).  This work included eight dancers, ten children, video by Ana Baer and music by Max Richter
+* ___I'm Here___ (2017)
+  * A short film I created, directed, and edited.  The other four dancers collaborated with me on choreography.  The short film premiered at the February 2016 Blipswitch fundraiser show
+* __Dance Nature/Nature Dance__ (2016)
+  * Created/choreographed a site-specifec piece entitled ___GROW___ in a tree in collaboration with Lisa Kobdish and Carissa Fisher.
+* ___Hiraeth___ (2016)
+  * Collaborated and performed with The Theorists at the Zilker Hillside Theater.
 * ___Highway Dust___ (2016)
   * Created a site-specific piece during 5 week workshop under the direction of Ellen Bartel at Ladybird Lake in Austin.  The pieces we created individually for the site were also woven together and re-sited for ACC's showcase _Transpositions_.
 * ___This is Where it Happened___ (2016)

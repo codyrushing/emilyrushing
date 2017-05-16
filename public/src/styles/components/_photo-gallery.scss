@@ -4,7 +4,15 @@
     width: $width;
     padding-bottom: $width / 16 * 9;
     position: relative;
+    margin: 25px $gutters/2;
     margin: $gutters/2;
+    display: table; // firefox...
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: $gutters/2;
+    }
   }
 };
 
@@ -27,6 +35,9 @@
       height: 100%;
       top: 0;
       left: 0;
+    }
+    img {
+      display: block;
     }
   }
   .toggle-more {
