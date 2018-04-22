@@ -1,9 +1,0 @@
-<a class="nav-toggle" href="#">
-  <span class="open">☰</span>
-  <span class="close">×</span>
-</a>
-<nav>
-  {{#each navPages}}
-    <a href="/{{name}}.html"{{#ifCond ../pageName "===" name}} class="active"{{/ifCond}}>{{title}}</a>
-  {{/each}}
-</nav>

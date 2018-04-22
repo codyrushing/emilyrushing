@@ -2,13 +2,24 @@
   "name": "emilyrushing",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "index.js",
+  "config": {
+    "less_config": "--include=path=node_modules"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "IS_DEVELOPMENT='true' gulp dev;",
-    "build": "gulp",
-    "assemble": "assemble",
-    "forever": "forever start server.js"
+    "dev": "node dev.js",
+    "dev:server": "nodemon --ignore src/js --ignore public --ext js,hbs .",
+    "dev:css": "less-watch-compiler --include-path node_modules/ src/styles public/css protected-lands.less",
+    "dev:js": "watchify src/js/app.js -t babelify -o public/js/protected-lands.js --debug --verbose",
+    "compress-images": "node ./utils/compress-images.js"
+  },
+  "browserify": {
+    "options": {
+      "transform": [
+        "babelify"
+      ]
+    }
   },
   "repository": {
     "type": "git",
@@ -21,43 +32,29 @@
   },
   "homepage": "https://github.com/codyrushing/emilyrushing#readme",
   "dependencies": {
-    "assemble": "^0.17.1",
-    "babel-preset-es2015": "^6.13.2",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "gray-matter": "^4.0.1",
+    "handlebars": "^4.0.11",
+    "handlebars-helpers": "^0.10.0",
+    "js-yaml": "^3.11.0",
+    "normalize.css": "^8.0.0",
+    "photoswipe": "^4.1.2"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
     "babelify": "^7.3.0",
-    "browserify": "^13.1.0",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-base64": "^0.1.3",
-    "gulp-clean-css": "^2.0.3",
-    "gulp-eslint": "^3.0.1",
-    "gulp-filter": "^4.0.0",
-    "gulp-htmlmin": "^2.0.0",
-    "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-load-plugins": "^1.2.4",
-    "gulp-newer": "^1.2.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-print": "^2.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-streamify": "^1.0.2",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
-    "gulp-watch": "^4.3.9",
-    "gulp-wrap": "^0.13.0",
-    "helper-markdown": "^0.2.1",
-    "helper-md": "^0.2.1",
-    "image-size": "^0.5.0",
-    "lazypipe": "^1.0.1",
-    "lwip": "0.0.9",
-    "node-static": "^0.7.8",
-    "normalize.css": "^3.0.3",
-    "photoswipe": "^4.1.1",
-    "run-sequence": "^1.1.5",
-    "vinyl": "^1.2.0",
-    "vinyl-source-stream": "^1.1.0"
+    "imagemin": "^5.3.1",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^5.1.0",
+    "imagemin-svgo": "^6.0.0",
+    "less": "^3.0.2",
+    "less-watch-compiler": "^1.11.2",
+    "nodemon": "^1.17.3",
+    "watchify": "^3.11.0"
   }
 }

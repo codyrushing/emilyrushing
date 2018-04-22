@@ -1,0 +1,4 @@
+SITE_TITLE: Emily Rushing
+VIEWS_PATH: src/views
+PUBLIC_PATH: public
+IS_DEVELOPMENT: true

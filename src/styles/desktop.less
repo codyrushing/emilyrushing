@@ -1,0 +1,29 @@
+@galleryColumns: 4;
+@headerHeight: 4rem;
+@footerHeight: 3rem;
+
+@media all and (min-width: @desktop) {
+  html {
+    font-size: 18px;
+  }
+  body {
+    padding-top: @headerHeight;
+    padding-bottom: @footerHeight;
+  }
+
+  header {
+    height: @headerHeight;
+  }
+
+  footer {
+    height: @footerHeight;
+  }
+
+  .aside {
+    width: 33%;
+  }
+
+  .hero-height(3);
+
+  .photo-gallery-layout(4);
+}

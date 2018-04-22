@@ -1,0 +1,9 @@
+<a class="nav-toggle" href="#">
+  <span class="open">☰</span>
+  <span class="close">×</span>
+</a>
+<nav>
+  {{#each pages}}
+    <a href="/{{page.route}}.html"{{#is ../pageName name}} class="active"{{/is}}>{{metadata.pageTitle}}</a>
+  {{/each}}
+</nav>
