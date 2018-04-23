@@ -4,6 +4,8 @@
 </a>
 <nav>
   {{#each pages}}
-    <a href="/{{page.route}}.html"{{#is ../pageName name}} class="active"{{/is}}>{{metadata.pageTitle}}</a>
+    {{#not metadata.hideInNav}}
+      <a href="/{{route}}"{{#is ../pageTitle metadata.pageTitle}} class="active"{{/is}}>{{metadata.pageTitle}}</a>
+    {{/not}}
   {{/each}}
 </nav>

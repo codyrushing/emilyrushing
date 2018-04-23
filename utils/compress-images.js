@@ -21,7 +21,9 @@ glob(
   (err, files) => {
     if(err) throw err;
     return Promise.all(
-      files.map(
+      files
+      .filter(file => file.indexOf('/originals/') === -1)
+      .map(
         file => {
           imagemin(
             [file],

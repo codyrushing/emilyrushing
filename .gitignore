@@ -32,8 +32,4 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-public/bower_components
-public/src/styles/vendor
-public/dist/css
-public/dist/js
-public/dist/*.html
+public/

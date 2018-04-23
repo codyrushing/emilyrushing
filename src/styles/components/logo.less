@@ -1,21 +1,21 @@
 .logo {
   font-size: 0;
   a {
-    color: @text-color;
+    color: @text-color-dark;
   }
   span {
-    margin-top: -0.1em;
     position: relative;
-    .Raleway();
+    .bodyFont();
     font-size: 1.2rem;
-    letter-spacing: -0.06em;
     display: inline-block;
     &:first-child {
       font-weight: 700;
     }
     &:last-child {
-      top: 0.2em;
-      .PlayfairDisplay();
+      // &:before {
+      //   content: '_';
+      // }
+      .headingFont();
     }
   }
 }

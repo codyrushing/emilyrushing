@@ -8,11 +8,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
     "dev": "node dev.js",
     "dev:server": "nodemon --ignore src/js --ignore public --ext js,hbs .",
     "dev:css": "less-watch-compiler --include-path node_modules/ src/styles public/css protected-lands.less",
     "dev:js": "watchify src/js/app.js -t babelify -o public/js/protected-lands.js --debug --verbose",
-    "compress-images": "node ./utils/compress-images.js"
+    "custom": "node ./utils/build-gallery.js; node ./utils/compress-images.js; cp node_modules/photoswipe/dist/default-skin/* public/css"
   },
   "browserify": {
     "options": {
@@ -32,6 +33,7 @@
   },
   "homepage": "https://github.com/codyrushing/emilyrushing#readme",
   "dependencies": {
+    "browserify": "^16.2.0",
     "compression": "^1.7.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
@@ -45,6 +47,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "babelify": "^7.3.0",
+    "glob": "^7.1.2",
     "imagemin": "^5.3.1",
     "imagemin-cli": "^3.0.0",
     "imagemin-gifsicle": "^5.2.0",
@@ -55,6 +58,7 @@
     "less": "^3.0.2",
     "less-watch-compiler": "^1.11.2",
     "nodemon": "^1.17.3",
+    "sharp": "^0.20.1",
     "watchify": "^3.11.0"
   }
 }

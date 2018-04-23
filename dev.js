@@ -1,6 +1,6 @@
 const { exec } = require('child_process');
 const path = require('path');
-const { css, js, images } = require('./build.json');
+const { css, js, images } = require('./build-config.json');
 const handler = (err, stdout, stderr) => {
   console.log(this);
   console.log(stdout);
@@ -21,7 +21,7 @@ const devProcesses = [
   ...js.map(
     item => `watchify ${item.src} -t babelify -o ${item.dest} --debug --verbose`
   ),
-  `npm run compress-images`
+  `npm run custom`
 ]
 .map(
   command => {

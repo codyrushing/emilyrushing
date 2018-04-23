@@ -991,13 +991,13 @@ a.pswp__share--download:hover {
 }
 html {
   height: 100%;
-  font-family: 'Raleway' sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
 body {
   line-height: 1.5;
-  color: #222;
+  color: #555;
   min-height: 100%;
   position: relative;
 }
@@ -1016,8 +1016,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Playfair Display' serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 400;
+  color: #222;
   line-height: 1;
   margin: 4% 0 0;
   padding: 0;
@@ -1048,20 +1049,17 @@ main {
   color: #222;
 }
 .logo span {
-  margin-top: -0.1em;
   position: relative;
-  font-family: 'Raleway' sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
-  letter-spacing: -0.06em;
   display: inline-block;
 }
 .logo span:first-child {
   font-weight: 700;
 }
 .logo span:last-child {
-  top: 0.2em;
-  font-family: 'Playfair Display' serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
 .hero {
@@ -1128,12 +1126,12 @@ header nav {
   width: 200px;
   font-size: 1rem;
   padding: 1rem;
-  font-family: 'Playfair Display' serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 400;
   transition: right 0.2s ease-in-out;
 }
 header nav a {
-  color: #222;
+  color: #555;
   line-height: 2rem;
   display: block;
   padding: 0.25rem;
@@ -1145,7 +1143,7 @@ header nav a.active {
   color: #0D5B99;
 }
 header .nav-toggle {
-  color: #222;
+  color: #555;
   font-size: 1.6rem;
 }
 header .nav-toggle .close {

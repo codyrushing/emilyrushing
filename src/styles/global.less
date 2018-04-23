@@ -4,22 +4,23 @@
 
 @topnav-width: 200px;
 
-@text-color: #222;
+@text-color: #555;
+@text-color-dark: #222;
 @main-color: #0D5B99;
 
-.Raleway(){
-  font-family: 'Raleway' sans-serif;
+.bodyFont(){
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
-.PlayfairDisplay(){
-  font-family: 'Playfair Display' serif;
+.headingFont(){
+  font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
 
 html {
   height: 100%;
-  .Raleway();
+  .bodyFont();
   font-size: 14px;
 }
 
@@ -48,7 +49,8 @@ h3,
 h4,
 h5,
 h6 {
-  .PlayfairDisplay();
+  .headingFont();
+  color: @text-color-dark;
   line-height: 1;
   margin: 4% 0 0;
   padding: 0;

@@ -1,0 +1,18 @@
+{
+  "js": [
+    {
+      "src": "src/js/main.js",
+      "dest": "public/js/main.js"
+    }
+  ],
+  "css": [
+    {
+      "src": "src/styles/main.less",
+      "dest": "public/css/main.css"
+    }
+  ],
+  "images": {
+    "src": "src/images/**/*.{jpg,gif,png}",
+    "dest": "public/images"
+  }
+}
