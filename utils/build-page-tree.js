@@ -40,4 +40,6 @@ const traverse = (dir, base=root) => {
 };
 
 traverse(VIEWS_PATH);
-module.exports = pages;
+module.exports = pages.sort(
+  (a,b) => (a.metadata.pageIndex || 0) - (b.metadata.pageIndex || 0)
+);

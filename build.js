@@ -17,11 +17,11 @@ const buildProcesses = [
   `rm -rf ${images.dest}`,
   // compile css
   ...css.map(
-    item => `lessc ${item.src} ${item.dest}`
+    item => `lessc ${item.src} ${item.dest} --clean-css`
   ),
   // compile js
   ...js.map(
-    item => `browserify ${item.src} -t babelify -o ${item.dest} --debug --verbose`
+    item => `browserify ${item.src} -t babelify | uglifyjs -c > ${item.dest}`
   ),
   'npm run custom',
 ]

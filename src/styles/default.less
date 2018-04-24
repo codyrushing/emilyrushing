@@ -3,12 +3,17 @@
 @headerHeight: 3rem;
 @footerHeight: 3rem;
 
+// components
 @import "components/logo";
 @import "components/hero";
 @import "components/header";
-@import "components/photo-gallery";
+@import "components/gallery";
 @import "components/video-embed";
-.photo-gallery-layout(2);
+
+// pages
+@import "pages/home";
+@import "pages/about";
+.gallery-layout(2);
 
 body {
   padding: @headerHeight 4% @footerHeight;

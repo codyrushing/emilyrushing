@@ -7,6 +7,7 @@ const app = express();
 
 const config = require('./utils/config');
 const { VIEWS_PATH, PUBLIC_PATH } = config;
+const timestamp = Date.now();
 
 const exphbs  = require('express-handlebars');
 const hbs = exphbs.create({
@@ -33,7 +34,8 @@ pages.forEach(
       (req, res, next) => res.render(page.template, {
         ...config,
         ...page.metadata,
-        pages
+        pages,
+        timestamp
       })
     );
   }

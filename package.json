@@ -10,6 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
     "dev": "node dev.js",
+    "production": "npm run build; npm run forever",
+    "forever": "forever stopall; forever start index.js",
     "dev:server": "nodemon --ignore src/js --ignore public --ext js,hbs .",
     "dev:css": "less-watch-compiler --include-path node_modules/ src/styles public/css protected-lands.less",
     "dev:js": "watchify src/js/app.js -t babelify -o public/js/protected-lands.js --debug --verbose",
@@ -37,12 +39,15 @@
     "compression": "^1.7.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "forever": "^0.15.3",
     "gray-matter": "^4.0.1",
     "handlebars": "^4.0.11",
     "handlebars-helpers": "^0.10.0",
     "js-yaml": "^3.11.0",
+    "less-plugin-clean-css": "^1.5.1",
     "normalize.css": "^8.0.0",
-    "photoswipe": "^4.1.2"
+    "photoswipe": "^4.1.2",
+    "uglifyify": "^4.0.5"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",

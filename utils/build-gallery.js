@@ -3,7 +3,7 @@ const glob = require('glob');
 const sharp = require('sharp');
 
 const galleryPath = path.join(__dirname, '../src/images/gallery');
-const thumbWidth = 320;
+const thumbWidth = 400;
 const maxWidth = 2400;
 
 glob(
@@ -35,6 +35,7 @@ glob(
                   // resize and rename to _thumb
                   image
                     .resize(thumbWidth)
+                    .sharpen()
                     .toFile(
                       path.join(
                         galleryPath,
