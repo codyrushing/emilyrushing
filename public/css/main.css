@@ -989,6 +989,12 @@ a.pswp__share--download:hover {
 .pswp--minimal--dark .pswp__top-bar {
   background: none;
 }
+.pswp__caption__center {
+  text-align: center;
+}
+.pswp__caption__center p {
+  margin: 0;
+}
 html {
   height: 100%;
   font-family: 'Roboto', sans-serif;
@@ -1049,6 +1055,9 @@ h3 span {
 a {
   text-decoration: none;
   color: #0D5B99;
+}
+main a {
+  text-decoration: underline;
 }
 figure {
   margin: 0;
@@ -1138,11 +1147,9 @@ header nav a {
   display: block;
   padding: 0.25rem;
 }
-header nav a:first-child {
-  padding-top: 0;
-}
 header nav a.active {
-  color: #0D5B99;
+  background: #0D5B99;
+  color: #fff;
 }
 header .nav-toggle {
   color: #555;
@@ -1235,7 +1242,7 @@ body.nav-open header .nav-toggle .open {
   /* 16:9 */
   padding-top: 25px;
   height: 0;
-  margin: 4.34782609% 0;
+  margin: 0;
 }
 .video-wrapper iframe {
   position: absolute;

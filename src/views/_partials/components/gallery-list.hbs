@@ -3,6 +3,8 @@
       <a href="{{full}}" itemprop="contentUrl">
           <img src="{{thumb}}" itemprop="thumbnail" alt="{{description}}" />
       </a>
-      <figcaption itemprop="caption description">{{caption}}</figcaption>
+      <figcaption itemprop="caption description">
+        {{#markdown}}{{{caption}}}{{/markdown}}
+      </figcaption>
   </figure>
 {{/each}}
