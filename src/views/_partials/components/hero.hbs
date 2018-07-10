@@ -5,4 +5,9 @@
       <h2>{{#spanWords pageSubtitle}}{{/spanWords}}</h2>
     {{/if}}
   </div>
+  {{#if hero.credit}}
+    <figcaption>
+    {{#markdown}}{{{hero.credit}}}{{/markdown}}
+    </figcaption>
+  {{/if}}
 </div>

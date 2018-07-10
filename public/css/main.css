@@ -999,7 +999,7 @@ html {
   height: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 }
 body {
   line-height: 1.5;
@@ -1030,13 +1030,13 @@ h6 {
   padding: 0;
 }
 h1 {
-  font-size: 2.75em;
+  font-size: 2.6em;
 }
 h2 {
-  font-size: 1.75em;
+  font-size: 1.6em;
 }
 h3 {
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 h1,
 h2,
@@ -1091,6 +1091,7 @@ main {
   background-size: cover;
   background-position: center center;
   position: relative;
+  margin-bottom: 1.5rem;
 }
 .hero h2 {
   margin-top: 0;
@@ -1100,6 +1101,15 @@ main {
   bottom: 0.6em;
   left: 0.6em;
   margin: 20em 0 0;
+}
+.hero figcaption {
+  font-size: 0.75rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+.hero figcaption p {
+  margin: 0;
 }
 .hero {
   width: 100%;
@@ -1272,6 +1282,7 @@ body.home .gallery h3 {
 }
 body.about .aside.right {
   width: 40%;
+  margin-top: 0;
 }
 .gallery > * {
   width: 46%;
