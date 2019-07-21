@@ -29,14 +29,22 @@ app.use(compression());
 const pages = require('./utils/build-page-tree');
 pages.forEach(
   page => {
+    const { metadata } = page;
     app.get(
       `/${page.route}`,
-      (req, res, next) => res.render(page.template, {
-        ...config,
-        ...page.metadata,
-        pages,
-        timestamp
-      })
+      (req, res, next) => {
+
+        if(metadata.redirect){
+          return res.redirect(301, metadata.redirect);
+        }
+
+        res.render(page.template, {
+          ...config,
+          ...metadata,
+          pages,
+          timestamp
+        })
+      }
     );
   }
 );
