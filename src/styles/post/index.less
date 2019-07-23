@@ -1,0 +1,25 @@
+@import 'kg-card.less';
+@import 'post-feed.less';
+@import 'post-card.less';
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+
+  hr {
+    padding: 0;
+    margin: 2rem 0;
+    opacity: 0.6;
+  }
+
+  h2,
+  h3,
+  p,
+  h2 + figure,
+  h3 + figure {
+    &:not(:first-child){
+      margin-top: 0;
+    }
+  }
+}

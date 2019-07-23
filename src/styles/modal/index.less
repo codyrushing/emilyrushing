@@ -1,0 +1,66 @@
+@import 'site-nav.less';
+
+@keyframes popin {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#modal-wrapper {
+  position: relative;
+  z-index: 999;
+  display: none;
+}
+
+.modal {
+  // for iOS clickability
+  cursor: pointer;
+  background-color: @color-background-dark;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  .inner {
+    cursor: default;
+    position: relative;
+    padding: 2rem;
+    width: 685px;
+    max-width: 90%;
+    background: @color-main;// rgba(red(@color-blue), green(@color-blue), blue(@color-blue), 0.8);
+    box-shadow: 0 0 8px rgba(0,0,0,.5);
+  }
+  .modal-close {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+body.modal-open {
+
+  #modal-wrapper {
+    display: flex;
+  }
+
+  .modal.active {
+    display: flex;
+    .inner {
+      animation: popin 0.1s ease-in-out;
+    }
+  }
+}

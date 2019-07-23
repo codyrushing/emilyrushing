@@ -1,0 +1,24 @@
+.site-main {
+
+  & > .title {
+    display: flex;
+    justify-content: center;
+    h1 {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      text-shadow: 0 -1px 1px rgba(0,0,0,0.8);
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  a:link,
+  a:visited {
+    color: @color-main;
+    text-decoration: underline;
+    text-underline-position: under;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+}

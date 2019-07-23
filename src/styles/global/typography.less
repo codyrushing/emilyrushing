@@ -1,0 +1,58 @@
+body {
+  .bodyFont();
+  line-height: 1.2;
+  font-size: 16px;
+  color: @text-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  .headingFont();
+  color: @text-color-dark;
+  line-height: 1;
+  padding: 0;
+  margin: 1rem 0 0.2rem;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+h1,
+h2,
+h3 {
+  text-align: left;
+  span {
+    display: inline-block;
+    background: rgba(255,255,255,0.8);
+    margin: 0.2em 0 0;
+    line-height: 1.5;
+    padding: 0 0.2em;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.respond-to-min-width(@ipad-portrait-width, {
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+});

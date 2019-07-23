@@ -1,0 +1,26 @@
+.post-feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+
+  .post-card {
+    width: 100%;
+
+    .respond-to-min-width(
+      @ipad-portrait-width,
+      {
+        width: 45%;
+      }
+    );
+
+    .respond-to-min-width(
+      @ipad-landscape-width,
+      {
+        width: 30%;
+      }
+    );
+
+  }
+
+}

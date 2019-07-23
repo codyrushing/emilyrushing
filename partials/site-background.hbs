@@ -1,0 +1,17 @@
+{{#post}}
+  <div class="site-background">
+
+    {{#has tag="#no-bg"}}
+      {{!-- skipping background  --}}
+    {{else}}
+      {{#if feature_image}}
+        <img class="feature-image" src="{{feature_image}}" />
+      {{else}}
+        {{#if @site.cover_image}}
+          <img class="site-cover-image" src="{{@site.cover_image}}" />
+        {{/if}}
+      {{/if}}
+    {{/has}}
+
+  </div>
+{{/post}}

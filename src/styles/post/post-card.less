@@ -1,0 +1,34 @@
+.site-main {
+  .post-card {
+    &,
+    a {
+      text-decoration: none;
+      font-weight: 400;
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    padding: 0 1rem;
+
+    .post-card-content-link {
+      display: block;
+      transition: transform 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    .post-card-image {
+      display: flex;
+      margin: 0;
+      max-height: 300px;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,71 @@
+{{!--
+Wow what the hell is going on in here even?
+
+Ok so, several templates use this big header with a giant BG image. Nice idea, but big images
+have a heavy impact on performance, so it's a good idea to make them responsive. Because we
+can only get the image dynamically using Handlebars, and we can only set the image to properly
+be a feature_image image using CSS, we end up with a handful of inline styles.
+
+If the template in question has a background image, then we render responsive image styles
+for it, and apply those styles to the <header> tag. Else, we just output a <header> tag
+with a `no-image` class so we can style it accordingly.
+--}}
+{{#if feature_image}}
+
+<style type="text/css">
+.hero {
+    background-image: url({{img_url feature_image size='xl'}});
+}
+@media(max-width: 1000px) {
+    .hero {
+        background-image: url({{img_url feature_image size='l'}});
+        background-image: -webkit-image-set(
+                url({{img_url feature_image size='l'}}) 1x,
+                url({{img_url feature_image size='xl'}}) 2x
+        );
+        background-image: image-set(
+                url({{img_url feature_image size='l'}}) 1x,
+                url({{img_url feature_image size='xl'}}) 2x
+        );
+    }
+}
+@media(max-width: 600px) {
+    .hero {
+        background-image: url({{img_url feature_image size='m'}});
+        background-image: -webkit-image-set(
+                url({{img_url feature_image size='m'}}) 1x,
+                url({{img_url feature_image size='l'}}) 2x
+        );
+        background-image: image-set(
+                url({{img_url feature_image size='m'}}) 1x,
+                url({{img_url feature_image size='l'}}) 2x
+        );
+    }
+}
+</style>
+<header class="hero responsive-img">
+
+{{else}}
+
+<header class="hero no-image">
+
+{{/if}}
+
+<div class="post-title">
+  {{#if h1 }}
+    <h1>{{h1}}</h1>
+    {{#if h2}}
+      <h2>{{h2}}</h2>
+    {{/if}}
+  {{else}}
+    <h1>{{title}}</h1>
+  {{/if}}
+</div>
+
+{{#if custom_excerpt}}
+  <figcaption>
+    <p>{{{custom_excerpt}}}</p>
+  </figcaption>
+{{/if}}
+
+</header>

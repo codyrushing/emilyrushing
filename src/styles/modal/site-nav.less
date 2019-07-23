@@ -1,0 +1,33 @@
+#site-nav-modal {
+  a:not(.modal-close) {
+    display: block;
+    padding: 1rem;
+    &:active,
+    &:hover,
+    &:focus {
+      background: @color-light;
+      color: @color-main;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    a {
+      border-top: 1px solid @color-light;
+    }
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid @color-light;
+    padding: 1rem 0;
+    a {
+      padding: 0.5rem;
+    }
+    svg {
+      height: 20px;
+    }
+  }
+}

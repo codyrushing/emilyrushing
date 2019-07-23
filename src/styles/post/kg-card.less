@@ -1,0 +1,29 @@
+.kg-card {
+  text-align: center;
+  padding: 0;
+  margin: 2rem 0;
+  overflow: hidden;
+
+  &.kg-image-card {
+    img {
+      max-width: 100%;
+    }
+    figcaption {
+      font-size: 0.8rem;
+    }
+  }
+
+  &.kg-width-wide {
+    img {
+      min-width: 100%;
+    }
+  }
+
+  &.kg-width-full {
+    width: 100vw;
+    align-self: center;
+    img {
+      width: 100%;
+    }
+  }
+}

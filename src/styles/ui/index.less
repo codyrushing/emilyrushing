@@ -1,0 +1,32 @@
+.site-main {
+  button,
+  .button {
+    &,
+    &:link,
+    &:visited {
+      padding: 1rem;
+      background: @color-main;
+      color: @color-light;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 4px;
+      white-space: nowrap;
+      line-height: 1;
+      transition: opacity 0.1s ease-in-out;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+        color: inherit;
+      }
+      &.small {
+        padding: 0.4rem;
+        line-height: 1;
+      }
+
+      &.inline {
+        margin: 0 0.2rem;
+      }
+    }
+  }
+}

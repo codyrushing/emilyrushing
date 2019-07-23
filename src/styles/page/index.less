@@ -1,0 +1,35 @@
+@import 'header.less';
+@import 'main.less';
+@import 'footer.less';
+@import 'home.less';
+@import 'hero.less';
+
+body {
+  padding: 0 4%;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main,
+.site-header,
+.site-footer {
+  position: relative;
+}
+
+.site-main {
+  z-index: 1;
+  flex-grow: 1;
+  margin: 1rem 0;
+}
+
+.site-footer {
+  z-index: 2;
+}
+
+.site-header {
+  z-index: 3;
+}

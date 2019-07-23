@@ -3,26 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": {
+    "email": "codyrushing@gmail.com"
+  },
   "config": {
     "less_config": "--include=path=node_modules"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js",
-    "dev": "node dev.js",
-    "production": "npm run build; npm run forever",
-    "forever": "forever stopall; forever start index.js",
-    "dev:server": "nodemon --ignore src/js --ignore public --ext js,hbs .",
-    "dev:css": "less-watch-compiler --include-path node_modules/ src/styles public/css protected-lands.less",
-    "dev:js": "watchify src/js/app.js -t babelify -o public/js/protected-lands.js --debug --verbose",
-    "custom": "node ./utils/build-gallery.js; node ./utils/compress-images.js; cp node_modules/photoswipe/dist/default-skin/* public/css"
-  },
-  "browserify": {
-    "options": {
-      "transform": [
-        "babelify"
-      ]
-    }
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -35,35 +24,15 @@
   },
   "homepage": "https://github.com/codyrushing/emilyrushing#readme",
   "dependencies": {
-    "browserify": "^16.2.0",
-    "compression": "^1.7.2",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "forever": "^0.15.3",
-    "gray-matter": "^4.0.1",
-    "handlebars": "^4.0.11",
-    "handlebars-helpers": "^0.10.0",
-    "js-yaml": "^3.11.0",
-    "less-plugin-clean-css": "^1.5.1",
+    "babel-preset-env": "^1.7.0",
+    "globby": "^10.0.1",
     "normalize.css": "^8.0.0",
-    "photoswipe": "^4.1.2",
-    "uglifyify": "^5.0.0"
+    "parcel-bundler": "^1.12.3",
+    "viewport-units-buggyfill": "^0.6.2",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.1",
-    "babelify": "^7.3.0",
-    "glob": "^7.1.2",
-    "imagemin": "^5.3.1",
-    "imagemin-cli": "^3.0.0",
-    "imagemin-gifsicle": "^5.2.0",
-    "imagemin-jpegtran": "^5.0.2",
-    "imagemin-mozjpeg": "^7.0.0",
-    "imagemin-pngquant": "^5.1.0",
-    "imagemin-svgo": "^6.0.0",
-    "less": "^3.0.2",
-    "less-watch-compiler": "^1.11.2",
-    "nodemon": "^1.17.3",
-    "sharp": "^0.20.2",
-    "watchify": "^3.11.0"
+    "babel-core": "^6.26.3",
+    "less": "^3.9.0"
   }
 }

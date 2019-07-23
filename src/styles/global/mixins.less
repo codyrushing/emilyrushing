@@ -1,0 +1,63 @@
+@iphone-6-plus-width: 414px;
+@iphone-6-width: 375px;
+@iphone-4-width: 320px;
+@ipad-portrait-width: 768px;
+@ipad-landscape-width: 1024px;
+
+.bodyFont(){
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.headingFont(){
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.respond-to-max-width(@maxWidth; @rules){
+  @media only screen and (max-width: @maxWidth) {
+      @rules();
+  };
+}
+
+.respond-to-min-width(@minWidth; @rules){
+  @media only screen and (min-width: @minWidth) {
+      @rules();
+  };
+}
+
+.respond-to-max-height(@maxWidth; @rules){
+  @media only screen and (max-height: @maxWidth) {
+      @rules();
+  };
+}
+
+.respond-to-min-height(@maxWidth; @rules){
+  @media only screen and (min-height: @maxWidth) {
+      @rules();
+  };
+}
+
+.respond-to-tablet(@rules){
+  .respond-to-max-width(@ipad-portrait-width, @rules);
+}
+
+.respond-to-mobile-large(@rules){
+  .respond-to-max-width(@iphone-6-plus-width, @rules);
+}
+
+.respond-to-mobile-small(@rules){
+  .respond-to-max-width(@iphone-4-width, @rules);
+}
+
+.respond-to-min-aspect-ratio(@ratio, @rules) {
+  @media only screen and (min-aspect-ratio: @ratio){
+    @rules();
+  }
+}
+
+.respond-to-max-aspect-ratio(@ratio, @rules){
+  @media only screen and (max-aspect-ratio: @ratio){
+    @rules();
+  }
+}

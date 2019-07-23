@@ -1,0 +1,47 @@
+@import 'variables.less';
+@import 'mixins.less';
+@import 'typography.less';
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
+
+html {
+  height: 100%;
+  .bodyFont();
+  font-size: 16px;
+}
+
+html:not(.wf-active) {
+  visibility: hidden;
+}
+
+body {
+  line-height: 1.5;
+  color: @text-color;
+  min-height: 100%;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: @color-main;
+}
+
+main a {
+  text-decoration: underline;
+}
+
+figure {
+  margin: 0;
+}
+
+main {
+  text-align: justify;
+}

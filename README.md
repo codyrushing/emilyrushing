@@ -1,2 +1,2 @@
 # emilyrushing
-Portfolio site for Emily Rushing
+A Ghost theme for emily-rushing.com
