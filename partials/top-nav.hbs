@@ -1,11 +1,11 @@
 <nav class="top-nav">
-    <a class="top-nav-logo" href="{{@site.url}}">
-      {{#if @site.logo}}
-        <img src="{{@site.logo}}" />
-      {{else}}
-        {{> icons/seam-logo }}
-      {{/if}}
-    </a>
+    <div class="top-nav-logo">
+      <a class="top-nav-logo" href="{{@site.url}}">
+        <span>Emily</span>
+        <span>Rushing</span>
+      </a>
+    </div>
+    <div class="nav-links">
       {{#if @site.navigation}}
           {{navigation}}
       {{/if}}
@@ -13,6 +13,7 @@
         {{> social-links }}
         <a href="#site-nav-modal" rel="modal" class="menu-link">{{> icons/menu }}</a>
       </div>
+    </div>
   {{!-- {{#if @site.navigation}}
       {{navigation}}
   {{/if}} --}}

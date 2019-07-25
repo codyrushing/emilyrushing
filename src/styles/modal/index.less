@@ -11,6 +11,17 @@
     }
 }
 
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 #modal-wrapper {
   position: relative;
   z-index: 999;
@@ -49,6 +60,15 @@
       width: 20px;
     }
   }
+
+  &.slidein {
+    align-items: stretch;
+    justify-content: flex-end;
+    .inner {
+      width: 80%;
+      max-width: 400px;
+    }
+  }
 }
 
 body.modal-open {
@@ -61,6 +81,12 @@ body.modal-open {
     display: flex;
     .inner {
       animation: popin 0.1s ease-in-out;
+    }
+
+    &.slidein {
+      .inner {
+        animation: slidein 0.2s ease-in-out;        
+      }
     }
   }
 }

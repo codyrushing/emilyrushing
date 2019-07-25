@@ -316,10 +316,10 @@ h4 {
   margin: 1rem 0 0.2rem;
 }
 h1 {
-  font-size: 2.6em;
+  font-size: 2.25rem;
 }
 h2 {
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 h3 {
   font-size: 1.1em;
@@ -343,13 +343,24 @@ h3 span {
 }
 @media only screen and (min-width: 768px) {
   h1 {
-    font-size: 2.25rem;
+    font-size: 3.2rem;
   }
   h2 {
     font-size: 1.75rem;
   }
   h3 {
     font-size: 1.35rem;
+  }
+}
+@media only screen and (max-width: 414px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.1rem;
   }
 }
 * {
@@ -390,11 +401,7 @@ main {
   text-align: justify;
 }
 .site-header {
-  padding: 0 4%;
-  display: flex;
   position: fixed;
-  align-items: center;
-  justify-content: space-between;
   background: #fff;
   top: 0;
   left: 0;
@@ -403,7 +410,9 @@ main {
 }
 .site-header a {
   text-decoration: none;
-  color: #fff;
+  color: #555;
+  transition: color 0.1s ease-in-out;
+  padding: 0.5rem;
 }
 .site-header .top-nav {
   display: flex;
@@ -412,10 +421,38 @@ main {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
-.site-header .top-nav .nav-current > a,
+.site-header .top-nav .top-nav-logo {
+  font-size: 0;
+}
+.site-header .top-nav .top-nav-logo a {
+  display: block;
+  color: #222;
+}
+.site-header .top-nav .top-nav-logo span {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+.site-header .top-nav .top-nav-logo span:first-child {
+  font-weight: 700;
+}
+.site-header .top-nav .top-nav-logo span:last-child {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
 .site-header .top-nav a:hover {
+  color: #0D5B99;
+}
+.site-header .top-nav .nav-current > a,
+.site-header .top-nav .nav-current > a:hover {
   background: #0D5B99;
   color: #fff;
+}
+.site-header .top-nav .nav-links {
+  display: flex;
+  justify-content: center;
 }
 .site-header .top-nav .links {
   display: flex;
@@ -451,10 +488,10 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 135px;
 }
 .site-header .top-nav .nav-right a {
   padding: 1rem 0.5rem;
+  line-height: 1;
 }
 @media only screen and (min-width: 768px) {
   .site-header .top-nav .nav {
@@ -486,7 +523,6 @@ main {
 }
 .site-footer {
   z-index: 2;
-  padding: 0.5rem;
   font-size: 0.8rem;
 }
 .site-footer .site-footer-content {
@@ -557,6 +593,18 @@ main {
 .hero {
   width: 100%;
   padding-top: 50%;
+}
+@media (min-aspect-ratio: 4/3) {
+  .hero {
+    width: 100%;
+    padding-top: 37.49531309%;
+  }
+}
+@media (max-aspect-ratio: 3/4) {
+  .hero {
+    width: 100%;
+    padding-top: 59.9880024%;
+  }
 }
 body {
   padding: 0 4%;
@@ -709,6 +757,16 @@ body {
     opacity: 1;
   }
 }
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    transform: translateX(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 #modal-wrapper {
   position: relative;
   z-index: 999;
@@ -746,6 +804,14 @@ body {
   height: 20px;
   width: 20px;
 }
+.modal.slidein {
+  align-items: stretch;
+  justify-content: flex-end;
+}
+.modal.slidein .inner {
+  width: 80%;
+  max-width: 400px;
+}
 body.modal-open #modal-wrapper {
   display: flex;
 }
@@ -754,6 +820,9 @@ body.modal-open .modal.active {
 }
 body.modal-open .modal.active .inner {
   animation: popin 0.1s ease-in-out;
+}
+body.modal-open .modal.active.slidein .inner {
+  animation: slidein 0.2s ease-in-out;
 }
 .site-main button,
 .site-main .button,

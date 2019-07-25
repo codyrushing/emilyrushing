@@ -1,10 +1,6 @@
 .site-header {
   background: @color-light;
-  padding: 0 4%;
-  display: flex;
   position: fixed;
-  align-items: center;
-  justify-content: space-between;
   background: #fff;
   top: 0;
   left: 0;
@@ -13,7 +9,9 @@
 
   a {
     text-decoration: none;
-    color: @color-light;
+    color: @text-color;
+    transition: color .1s ease-in-out;
+    padding: 0.5rem;
   }
 
   .top-nav {
@@ -22,10 +20,44 @@
     flex-wrap: wrap;
     .headingFont();
 
-    .nav-current > a,
+    .top-nav-logo {
+      font-size: 0;
+      a {
+        display: block;
+        color: @text-color-dark;
+      }
+      span {
+        position: relative;
+        .bodyFont();
+        font-size: 1.2rem;
+        display: inline-block;
+        &:first-child {
+          font-weight: 700;
+        }
+        &:last-child {
+          // &:before {
+          //   content: '_';
+          // }
+          .headingFont();
+        }
+      }
+    }
+
     a:hover {
-      background: @color-main;
-      color: #fff;
+      color: @color-main;
+    }
+
+    .nav-current > a {
+      &,
+      &:hover {
+        background: @color-main;
+        color: @color-light;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
     }
 
     .links {
@@ -69,9 +101,9 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      width: 135px;
       a {
         padding: 1rem 0.5rem;
+        line-height: 1;
       }
     }
 
