@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "author": {
-    "email": "codyrushing@gmail.com"
+  "author": "",
+  "engines": {
+    "ghost-api": "v2"
   },
   "config": {
     "less_config": "--include=path=node_modules"
@@ -17,7 +18,6 @@
     "type": "git",
     "url": "git+https://github.com/codyrushing/emilyrushing.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/codyrushing/emilyrushing/issues"
@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-preset-env": "^1.7.0",
     "globby": "^10.0.1",
+    "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.0",
     "parcel-bundler": "^1.12.3",
     "viewport-units-buggyfill": "^0.6.2",

@@ -8,7 +8,20 @@ into the {body} of the default.hbs template --}}
   <main id="site-main" class="site-main outer">
     {{> hero h1=@site.title h2=@site.description }}
     <div class="inner post-inner">
-      {{> post-content}}
+      {{#get "pages" limit="all" as |pages|}}
+          {{! Loop through our featured posts }}
+          <div class="post-cards-list">
+            {{#foreach pages}}
+              {{#if featured}}
+                {{> post-card}}
+              {{/if}}
+            {{else}}
+              {{! If there are no featured posts}}
+            {{/foreach}}
+          </div>
+      {{else}}
+        <p class="error">{{error}}</p>
+      {{/get}}
     </div>
   </main>
 {{/post}}

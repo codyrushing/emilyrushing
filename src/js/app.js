@@ -1,3 +1,4 @@
+const throttle = require('lodash.throttle');
 const bodyModalClass = 'modal-open';
 const modalActiveClass = 'active';
 
@@ -10,6 +11,7 @@ export default class App {
     this.modalWrapper = document.getElementById('modal-wrapper');
     this.bindModalEvents();
     this.stylizeHeadings();
+    this.stickyHeader();
 
     // make all external links open in new tab
     document.querySelectorAll('a[href]')
@@ -28,8 +30,28 @@ export default class App {
 
   }
 
+  stickyHeader(){
+    const stickyWrapper = document.createElement('div');
+    const header = document.querySelector('.site-header');
+
+    stickyWrapper.classList.add('sticky-wrapper');
+    header.parentNode.insertBefore(stickyWrapper, header);
+    stickyWrapper.appendChild(header);
+
+    const applyHeaderStyles = () => {
+      stickyWrapper.style.height = `${header.offsetHeight}px`;
+    };
+
+    window.addEventListener(
+      'resize',
+      throttle(applyHeaderStyles, 500)
+    );
+
+    applyHeaderStyles();
+  }
+
   stylizeHeadings(){
-    const headings = document.querySelectorAll('.hero h1, .hero h2');
+    const headings = document.querySelectorAll('.hero h1, .hero h2, .post-card h3');
     headings.forEach(
       heading => {
         heading.innerHTML = heading.textContent.split(' ')

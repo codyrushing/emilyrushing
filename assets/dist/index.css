@@ -417,6 +417,7 @@ main {
 .site-header .top-nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
@@ -425,6 +426,7 @@ main {
   font-size: 0;
 }
 .site-header .top-nav .top-nav-logo a {
+  margin-left: -0.5rem;
   display: block;
   color: #222;
 }
@@ -488,6 +490,7 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-right: -0.5rem;
 }
 .site-header .top-nav .nav-right a {
   padding: 1rem 0.5rem;
@@ -500,6 +503,13 @@ main {
   .site-header .top-nav .menu-link {
     display: none;
   }
+}
+.sticky-wrapper > .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 4%;
+  width: 100%;
 }
 .site-main > .title {
   display: flex;
@@ -529,6 +539,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.25rem 0;
 }
 .site-footer .social-links {
   display: flex;
@@ -622,7 +633,7 @@ body {
 .site-main {
   z-index: 1;
   flex-grow: 1;
-  margin: 1rem 0;
+  margin: 0;
 }
 .site-footer {
   z-index: 2;
@@ -671,34 +682,47 @@ body {
     width: 30%;
   }
 }
-.site-main .post-card {
-  padding: 0 1rem;
-}
 .site-main .post-card,
 .site-main .post-card a {
   text-decoration: none;
   font-weight: 400;
   color: inherit;
 }
-.site-main .post-card:hover,
-.site-main .post-card a:hover {
-  color: inherit;
-}
 .site-main .post-card .post-card-content-link {
+  padding-top: 56.25%;
+  position: relative;
   display: block;
-  transition: transform 0.2s ease-in-out;
+  background-position: center center;
+  background-size: cover;
+  transition: box-shadow 0.2s ease-in-out;
 }
 .site-main .post-card .post-card-content-link:hover {
-  transform: scale(1.02);
+  color: inherit;
+}
+.site-main .post-card .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.5rem;
 }
 .site-main .post-card .post-card-image {
   display: flex;
   margin: 0;
-  max-height: 300px;
 }
 .site-main .post-card .post-card-image img {
   object-fit: cover;
-  width: 100%;
+}
+.site-main .post-cards-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+@media only screen and (min-width: 56em) {
+  .site-main .post-cards-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .post-content {
   display: flex;
@@ -784,6 +808,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.modal a {
+  color: #fff;
+}
 .modal .inner {
   cursor: default;
   position: relative;
@@ -791,7 +818,7 @@ body {
   width: 685px;
   max-width: 90%;
   background: #0D5B99;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 .modal .modal-close {
   position: absolute;

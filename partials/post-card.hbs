@@ -2,34 +2,47 @@
 
     <div class="post-card-content">
 
-        <a class="post-card-content-link" href="{{url}}">
-
-            <header class="post-card-header">
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-
+        <a class="post-card-content-link post-card-{{id}}" href="{{url}}">
             {{#if feature_image}}
-            <figure class="post-card-image" href="{{url}}">
-                {{!-- This is a responsive image, it loads different sizes depending on device
-                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                <img class="post-card-image"
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(max-width: 1000px) 400px, 700px"
-                    src="{{img_url feature_image size="m"}}"
-                    alt="{{title}}"
-                />
-            </figure>
+
+              <style type="text/css">
+              .post-card-{{id}} {
+                  background-image: url({{img_url feature_image size='xl'}});
+              }
+              @media(max-width: 1000px) {
+                  .post-card-{{id}} {
+                      background-image: url({{img_url feature_image size='l'}});
+                      background-image: -webkit-image-set(
+                              url({{img_url feature_image size='l'}}) 1x,
+                              url({{img_url feature_image size='xl'}}) 2x
+                      );
+                      background-image: image-set(
+                              url({{img_url feature_image size='l'}}) 1x,
+                              url({{img_url feature_image size='xl'}}) 2x
+                      );
+                  }
+              }
+              @media(max-width: 600px) {
+                  .post-card-{{id}} {
+                      background-image: url({{img_url feature_image size='m'}});
+                      background-image: -webkit-image-set(
+                              url({{img_url feature_image size='m'}}) 1x,
+                              url({{img_url feature_image size='l'}}) 2x
+                      );
+                      background-image: image-set(
+                              url({{img_url feature_image size='m'}}) 1x,
+                              url({{img_url feature_image size='l'}}) 2x
+                      );
+                  }
+              }
+              </style>
+
+              <h3 class="title">{{title}}</h3>
+
             {{/if}}
-
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
-                <p><button class="small secondary">See more &raquo;</button></p>
-            </section>
-
         </a>
+
+
 
     </div>{{!--/.post-card-content--}}
 

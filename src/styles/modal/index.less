@@ -40,6 +40,9 @@
   display: none;
   align-items: center;
   justify-content: center;
+  a {
+    color: @color-light;
+  }
   .inner {
     cursor: default;
     position: relative;
@@ -47,7 +50,7 @@
     width: 685px;
     max-width: 90%;
     background: @color-main;// rgba(red(@color-blue), green(@color-blue), blue(@color-blue), 0.8);
-    box-shadow: 0 0 8px rgba(0,0,0,.5);
+    box-shadow: 0 0 1rem rgba(0,0,0,.5);
   }
   .modal-close {
     position: absolute;
@@ -85,7 +88,7 @@ body.modal-open {
 
     &.slidein {
       .inner {
-        animation: slidein 0.2s ease-in-out;        
+        animation: slidein 0.2s ease-in-out;
       }
     }
   }

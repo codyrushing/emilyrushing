@@ -17,12 +17,14 @@
   .top-nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     .headingFont();
 
     .top-nav-logo {
       font-size: 0;
       a {
+        margin-left: -0.5rem;
         display: block;
         color: @text-color-dark;
       }
@@ -101,6 +103,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      margin-right: -0.5rem;
       a {
         padding: 1rem 0.5rem;
         line-height: 1;
@@ -122,4 +125,12 @@
   }
 
 
+}
+
+.sticky-wrapper > .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 4%;
+  width: 100%;
 }
