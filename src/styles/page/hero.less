@@ -5,45 +5,54 @@
   }
 }
 
-.hero {
-  min-height: 200px;
-  background-color: #ccc;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  margin-bottom: 1.5rem;
+.site-header {
+  .hero {
+    min-height: 200px;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 
-  h2 {
-    margin-top: 0;
-  }
-
-  .post-title {
-    position: absolute;
-    bottom: 0.6em;
-    left: 0.6em;
-    margin: 20em 0 0;
     h1,
-    h2,
-    h3 {
-      span {
-        display: inline-block;
-        background: @color-background-light;
-        margin: .2em 0 0;
-        line-height: 1.5;
-        padding: 0 .2em;
+    h2 {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .post-title {
+      position: absolute;
+      bottom: 0.6em;
+      left: 0.6em;
+      margin: 20em 0 0;
+      h1,
+      h2,
+      h3 {
+        span {
+          display: inline-block;
+          background: @color-background-light;
+          margin: .2em 0 0;
+          line-height: 1.5;
+          padding: 0 .2em;
+        }
       }
     }
+
   }
 
   figcaption {
     font-size: 0.75rem;
-    position: absolute;
-    top: 100%;
-    right: 0;
+    text-align: right;
     p {
       margin: 0;
     }
+    a {
+      padding: 0;
+    }
   }
+
 }
 
 .hero-height(2);

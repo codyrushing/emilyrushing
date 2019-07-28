@@ -1,4 +1,6 @@
-const throttle = require('lodash.throttle');
+import throttle from 'lodash.throttle';
+import WorkApp from './work';
+
 const bodyModalClass = 'modal-open';
 const modalActiveClass = 'active';
 
@@ -12,6 +14,10 @@ export default class App {
     this.bindModalEvents();
     this.stylizeHeadings();
     this.stickyHeader();
+
+    document.querySelectorAll('.site-main .work-list').forEach(
+      workAppRoot => new WorkApp({ root: workAppRoot })
+    );
 
     // make all external links open in new tab
     document.querySelectorAll('a[href]')

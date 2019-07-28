@@ -1,0 +1,62 @@
+.work-list {
+  &.hidden {
+    visibility: hidden;
+  }
+
+  .tag-nav {
+    margin: 1.5rem -@page-gutters;
+    padding: 1rem @page-gutters;
+    background: #eee;
+    text-align: center;
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.5);
+  }
+
+  .work-item {
+
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+
+    &:last-of-type {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+    .tags-list {
+      font-size: 0.8rem;
+    }
+  }
+
+  a[data-tag] {
+    &[data-tag="work"] {
+      display: none;
+    }
+
+    color: @color-light;
+    background: @color-main;
+    opacity: 0.4;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    margin: 0.25rem;
+    padding: 0.5em 0.25em;
+    line-height: 1;
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    &:hover
+    &:not(:active) {
+      opacity: 0.4;
+      text-decoration: underline;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+
+  }
+
+}

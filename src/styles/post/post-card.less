@@ -14,9 +14,10 @@
       display: block;
       background-position: center center;
       background-size: cover;
-      transition: box-shadow 0.2s ease-in-out;
+      transition: opacity 0.1s ease-in-out;
       &:hover {
         color: inherit;
+        opacity: 0.8;
       }
     }
 
@@ -42,6 +43,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    padding: 1.5rem 0;
 
     .respond-to-min-width(
       @desktop,

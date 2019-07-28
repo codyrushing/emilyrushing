@@ -1,0 +1,18 @@
+{{#get "posts" limit="all" filter="tag:work" order="published_at desc" include="tags"}}
+<section class="work-list">
+  <nav class="tag-nav tags-list"></nav>
+  {{#foreach posts}}
+    <article class="work-item" data-tags="{{#foreach tags}}{{^if @first}},{{/if}}{{name}}{{/foreach}}">
+      <div class="tags-list">
+        {{#foreach tags}}
+          <a href="#" data-tag="{{name}}">{{name}}</a>
+        {{/foreach}}
+      </div>
+      <h2>{{title}}</h2>
+      {{> post-content}}
+    </article>
+  {{else}}
+    {{! If there are no featured posts}}
+  {{/foreach}}
+</section>
+{{/get}}

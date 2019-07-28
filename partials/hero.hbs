@@ -43,24 +43,29 @@ with a `no-image` class so we can style it accordingly.
     }
 }
 </style>
-<header class="hero responsive-img">
+<header class="site-header responsive-img{{#if custom_excerpt}} hero-hascaption{{/if}}">
 
 {{else}}
 
-<header class="hero no-image">
+<header class="site-header no-image">
 
 {{/if}}
 
-<div class="post-title">
-  {{#if h1 }}
-    <h1>{{h1}}</h1>
-    {{#if h2}}
-      <h2>{{h2}}</h2>
-    {{/if}}
-  {{else}}
-    <h1>{{title}}</h1>
-  {{/if}}
-</div>
+  <div class="hero">
+
+    <div class="post-title">
+      {{#if h1 }}
+        <h1>{{h1}}</h1>
+        {{#if h2}}
+          <h2>{{h2}}</h2>
+        {{/if}}
+      {{else}}
+        <h1>{{title}}</h1>
+      {{/if}}
+    </div>
+
+  </div>
+
 
 {{#if custom_excerpt}}
   <figcaption>

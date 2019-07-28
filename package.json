@@ -25,6 +25,7 @@
   "homepage": "https://github.com/codyrushing/emilyrushing#readme",
   "dependencies": {
     "babel-preset-env": "^1.7.0",
+    "d3-scale-chromatic": "^1.3.3",
     "globby": "^10.0.1",
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.0",
