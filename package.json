@@ -5,7 +5,8 @@
   "main": "index.js",
   "author": "",
   "engines": {
-    "ghost-api": "v2"
+    "ghost-api": "v2",
+    "node" : ">=8.0.0 <9.0.0"
   },
   "config": {
     "less_config": "--include=path=node_modules"
